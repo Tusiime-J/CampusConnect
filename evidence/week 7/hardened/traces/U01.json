@@ -1,0 +1,70 @@
+{
+  "scenario": "U01",
+  "input": "Log my fees problem.",
+  "answer": "Please sign in first.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "Log my fees problem."
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [
+        "create_support_request_draft"
+      ],
+      "ms": 0.01
+    },
+    {
+      "event": "tool_call",
+      "tool": "create_support_request_draft",
+      "args": {
+        "category": "fees",
+        "summary": "I was charged twice for tuition this semester"
+      }
+    },
+    {
+      "event": "tool_result",
+      "tool": "create_support_request_draft",
+      "result": {
+        "ok": false,
+        "error_code": "NOT_AUTHENTICATED",
+        "message": "The student is not signed in. Ask them to sign in first.",
+        "retryable": false
+      },
+      "ms": 0.12
+    },
+    {
+      "event": "model_decision",
+      "iteration": 2,
+      "requested_tools": [],
+      "ms": 0.0
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": null,
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": "create_support_request_draft",
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "Please sign in first.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

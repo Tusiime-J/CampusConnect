@@ -1,0 +1,43 @@
+{
+  "scenario": "E04",
+  "input": "What is the capital of France?",
+  "answer": "That is outside CampusConnect's scope. I can help with CoCIS student-support questions.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "What is the capital of France?"
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [],
+      "ms": 0.01
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": null,
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "That is outside CampusConnect's scope. I can help with CoCIS student-support questions.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

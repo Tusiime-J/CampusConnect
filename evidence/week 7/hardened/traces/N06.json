@@ -1,0 +1,47 @@
+{
+  "scenario": "N06",
+  "input": "When does Semester I start?",
+  "answer": "Semester I begins in September 2026.\n\nSources:\n- Academic Calender.pdf",
+  "trace": [
+    {
+      "event": "user",
+      "text": "When does Semester I start?"
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [
+        "Academic Calender.pdf"
+      ],
+      "evidence": "[Source: Academic Calender.pdf, page 2]\nSemester I begins in September 2026.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [],
+      "ms": 0.01
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": null,
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "Semester I begins in September 2026.\n\nSources:\n- Academic Calender.pdf",
+      "sources": [
+        "Academic Calender.pdf"
+      ]
+    }
+  ],
+  "approvals": []
+}

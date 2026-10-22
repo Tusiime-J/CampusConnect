@@ -1,0 +1,86 @@
+{
+  "scenario": "A09",
+  "input": "Log a fees problem for me.",
+  "answer": "I couldn't verify the request reference I was about to give you. Please check your request status.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "Log a fees problem for me."
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [
+        "create_support_request_draft"
+      ],
+      "ms": 0.01
+    },
+    {
+      "event": "tool_call",
+      "tool": "create_support_request_draft",
+      "args": {
+        "category": "fees",
+        "summary": "I was charged twice for tuition this semester"
+      }
+    },
+    {
+      "event": "memory_write",
+      "case_ref": "CC-2026-00001"
+    },
+    {
+      "event": "tool_result",
+      "tool": "create_support_request_draft",
+      "result": {
+        "ok": true,
+        "data": {
+          "case_ref": "CC-2026-00001",
+          "category": "fees",
+          "summary": "I was charged twice for tuition this semester",
+          "status": "DRAFT",
+          "created_at": "2026-10-20T09:00:00Z",
+          "updated_at": "2026-10-20T09:00:00Z",
+          "duplicate_of_existing_draft": false
+        }
+      },
+      "ms": 0.49
+    },
+    {
+      "event": "model_decision",
+      "iteration": 2,
+      "requested_tools": [],
+      "ms": 0.0
+    },
+    {
+      "event": "guardrail",
+      "rule": "fabricated_reference",
+      "action": "replaced",
+      "detail": "CC-2026-00042"
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "DRAFT_CREATED",
+      "active_case_ref": "CC-2026-00001",
+      "last_tool": "create_support_request_draft",
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "I couldn't verify the request reference I was about to give you. Please check your request status.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

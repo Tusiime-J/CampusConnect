@@ -1,0 +1,73 @@
+{
+  "scenario": "TF03",
+  "input": "Submit CC-2026-00001.",
+  "answer": "The submission did not return a successful result. Please check the request status before attempting another submission.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "Submit CC-2026-00001."
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [
+        "submit_support_request"
+      ],
+      "ms": 0.01
+    },
+    {
+      "event": "tool_call",
+      "tool": "submit_support_request",
+      "args": {
+        "case_ref": "CC-2026-00001"
+      }
+    },
+    {
+      "event": "approval",
+      "question": "Send support request CC-2026-00001 to CoCIS support staff?",
+      "granted": true
+    },
+    {
+      "event": "tool_result",
+      "tool": "submit_support_request",
+      "result": {
+        "ok": false,
+        "error_code": "SERVICE_UNAVAILABLE",
+        "message": "The service is unavailable right now. Nothing was saved or sent.",
+        "retryable": false
+      },
+      "ms": 0.3
+    },
+    {
+      "event": "stop",
+      "reason": "submission_failed"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": "submit_support_request",
+      "last_stop_reason": "submission_failed",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "The submission did not return a successful result. Please check the request status before attempting another submission.",
+      "sources": []
+    }
+  ],
+  "approvals": [
+    {
+      "question": "Send support request CC-2026-00001 to CoCIS support staff?",
+      "granted": true
+    }
+  ]
+}

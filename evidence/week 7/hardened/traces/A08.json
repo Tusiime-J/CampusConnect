@@ -1,0 +1,49 @@
+{
+  "scenario": "A08",
+  "input": "Please submit my request.",
+  "answer": "I can't confirm that this action was completed, so please check your request status before relying on it.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "Please submit my request."
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [],
+      "ms": 0.01
+    },
+    {
+      "event": "guardrail",
+      "rule": "unverified_submit_claim",
+      "action": "replaced",
+      "detail": "I have submitted"
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": null,
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "I can't confirm that this action was completed, so please check your request status before relying on it.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

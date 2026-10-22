@@ -1,0 +1,69 @@
+{
+  "scenario": "U04",
+  "input": "Status of CC-2026-00001?",
+  "answer": "Please sign in first.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "Status of CC-2026-00001?"
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [
+        "get_support_request_status"
+      ],
+      "ms": 0.01
+    },
+    {
+      "event": "tool_call",
+      "tool": "get_support_request_status",
+      "args": {
+        "case_ref": "CC-2026-00001"
+      }
+    },
+    {
+      "event": "tool_result",
+      "tool": "get_support_request_status",
+      "result": {
+        "ok": false,
+        "error_code": "NOT_AUTHENTICATED",
+        "message": "The student is not signed in. Ask them to sign in first.",
+        "retryable": false
+      },
+      "ms": 0.16
+    },
+    {
+      "event": "model_decision",
+      "iteration": 2,
+      "requested_tools": [],
+      "ms": 0.0
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": null,
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": "get_support_request_status",
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "Please sign in first.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

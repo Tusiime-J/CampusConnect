@@ -1,0 +1,27 @@
+{
+  "scenario": "E03",
+  "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "answer": "That message is too long for me to process. Please keep it under 2000 characters.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "[blocked input, 5000 characters]"
+    },
+    {
+      "event": "guardrail",
+      "rule": "input_too_long",
+      "action": "blocked",
+      "detail": "5000 chars"
+    },
+    {
+      "event": "stop",
+      "reason": "input_blocked"
+    },
+    {
+      "event": "assistant",
+      "text": "That message is too long for me to process. Please keep it under 2000 characters.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

@@ -1,0 +1,47 @@
+{
+  "scenario": "TF05",
+  "input": "What are the tuition fees?",
+  "answer": "The information could not be confirmed from the available documents. Please check the official fees page.",
+  "trace": [
+    {
+      "event": "retrieval_error",
+      "message": "vector store unavailable"
+    },
+    {
+      "event": "user",
+      "text": "What are the tuition fees?"
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "Document retrieval is currently unavailable.",
+      "ms": 0.01
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [],
+      "ms": 0.01
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": null,
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "The information could not be confirmed from the available documents. Please check the official fees page.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

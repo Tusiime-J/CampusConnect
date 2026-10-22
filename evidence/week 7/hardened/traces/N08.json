@@ -1,0 +1,79 @@
+{
+  "scenario": "N08",
+  "input": "What happened to my request?",
+  "answer": "Your request CC-2026-00001 is still a DRAFT.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "What happened to my request?"
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "memory_read",
+      "case_ref": "CC-2026-00001",
+      "status": "DRAFT"
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [
+        "get_support_request_status"
+      ],
+      "ms": 0.02
+    },
+    {
+      "event": "tool_call",
+      "tool": "get_support_request_status",
+      "args": {
+        "case_ref": "CC-2026-00001"
+      }
+    },
+    {
+      "event": "tool_result",
+      "tool": "get_support_request_status",
+      "result": {
+        "ok": true,
+        "data": {
+          "case_ref": "CC-2026-00001",
+          "category": "registration",
+          "summary": "My course units do not show after registration",
+          "status": "DRAFT",
+          "created_at": "2026-10-20T09:00:00Z",
+          "updated_at": "2026-10-20T09:00:00Z"
+        }
+      },
+      "ms": 0.26
+    },
+    {
+      "event": "model_decision",
+      "iteration": 2,
+      "requested_tools": [],
+      "ms": 0.0
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "DRAFT_CREATED",
+      "active_case_ref": "CC-2026-00001",
+      "last_tool": "get_support_request_status",
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": true
+    },
+    {
+      "event": "assistant",
+      "text": "Your request CC-2026-00001 is still a DRAFT.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

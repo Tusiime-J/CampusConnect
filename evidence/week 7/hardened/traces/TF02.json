@@ -1,0 +1,70 @@
+{
+  "scenario": "TF02",
+  "input": "Log my fees problem.",
+  "answer": "I could not save the draft; nothing was saved.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "Log my fees problem."
+    },
+    {
+      "event": "retrieved_evidence",
+      "sources": [],
+      "evidence": "No relevant passages were retrieved.",
+      "ms": 0.0
+    },
+    {
+      "event": "model_decision",
+      "iteration": 1,
+      "requested_tools": [
+        "create_support_request_draft"
+      ],
+      "ms": 0.01
+    },
+    {
+      "event": "tool_call",
+      "tool": "create_support_request_draft",
+      "args": {
+        "category": "fees",
+        "summary": "I was charged twice for tuition this semester"
+      }
+    },
+    {
+      "event": "tool_result",
+      "tool": "create_support_request_draft",
+      "result": {
+        "ok": false,
+        "error_code": "SERVICE_UNAVAILABLE",
+        "message": "The service is unavailable right now. Nothing was saved or sent.",
+        "retryable": false
+      },
+      "ms": 0.14
+    },
+    {
+      "event": "model_decision",
+      "iteration": 2,
+      "requested_tools": [],
+      "ms": 0.0
+    },
+    {
+      "event": "stop",
+      "reason": "final_answer"
+    },
+    {
+      "event": "workflow_state",
+      "student_id": "23/U/00001/EVE",
+      "phase": "IDLE",
+      "active_case_ref": null,
+      "last_tool": "create_support_request_draft",
+      "last_stop_reason": "final_answer",
+      "turns": 1,
+      "memory_used": false
+    },
+    {
+      "event": "assistant",
+      "text": "I could not save the draft; nothing was saved.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}

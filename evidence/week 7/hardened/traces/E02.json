@@ -1,0 +1,27 @@
+{
+  "scenario": "E02",
+  "input": "   ",
+  "answer": "Please type your question or describe your problem, and I will help.",
+  "trace": [
+    {
+      "event": "user",
+      "text": "[blocked input, 3 characters]"
+    },
+    {
+      "event": "guardrail",
+      "rule": "empty_input",
+      "action": "blocked",
+      "detail": ""
+    },
+    {
+      "event": "stop",
+      "reason": "input_blocked"
+    },
+    {
+      "event": "assistant",
+      "text": "Please type your question or describe your problem, and I will help.",
+      "sources": []
+    }
+  ],
+  "approvals": []
+}
